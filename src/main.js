@@ -24,7 +24,9 @@ document.body.style.margin = "0";
 const app = document.getElementById("app");
 app.innerHTML = "";
 app.appendChild(renderer.domElement);
-app.appendChild(VRButton.createButton(renderer));
+app.appendChild(
+  ARButton.createButton(renderer, { requiredFeatures: ["hit-test"] })
+);
 
 
 // Light (simple + cheap)
