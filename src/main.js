@@ -1,4 +1,3 @@
-import "./style.css";
 import * as THREE from "three";
 import { ARButton } from "three/addons/webxr/ARButton.js";
 
@@ -22,10 +21,11 @@ renderer.xr.enabled = true;
 renderer.setClearColor(0x000000, 0);
 
 document.body.style.margin = "0";
-document.body.appendChild(renderer.domElement);
-document.body.appendChild(
-  ARButton.createButton(renderer, { requiredFeatures: ["hit-test"] })
-);
+const app = document.getElementById("app");
+app.innerHTML = "";
+app.appendChild(renderer.domElement);
+app.appendChild(VRButton.createButton(renderer));
+
 
 // Light (simple + cheap)
 scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1));
