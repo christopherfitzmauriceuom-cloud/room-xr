@@ -12,6 +12,7 @@ canvas {
   display: block;
 }
 
-button {
+button,
+select {
   font: inherit;
 }
